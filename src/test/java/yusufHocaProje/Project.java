@@ -10,6 +10,7 @@ import utilities.TestBase;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -66,6 +67,8 @@ public class Project extends TestBase {
         Collections.sort(productNameInTheCartList);
 
         Assert.assertEquals(nameOfProducts,productNameInTheCartList,"Test fot 'Comparing Cart List with choosed Products' is failed!");
+
+
     }
 
 
