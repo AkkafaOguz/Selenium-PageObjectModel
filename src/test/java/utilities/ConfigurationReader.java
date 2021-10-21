@@ -24,7 +24,7 @@ public class ConfigurationReader {
 
 //  1-
 
-    static Properties properties;
+     static Properties properties;
 
 //  2-
 

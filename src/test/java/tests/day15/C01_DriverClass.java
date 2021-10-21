@@ -10,7 +10,7 @@ public class C01_DriverClass {
     @Test
     public void test () {
         Driver.getDriver().get(ConfigurationReader.getProperty("AmazonUrl"));
-        Driver.getDriver().get(ConfigurationReader.getProperty("CHUrl"));
+        //Driver.getDriver().get(ConfigurationReader.getProperty("CHUrl"));
         Driver.getDriver().get(ConfigurationReader.getProperty("FacebookUrl"));
 
         Driver.closeDriver();

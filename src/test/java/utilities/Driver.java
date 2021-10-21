@@ -53,20 +53,21 @@ public class Driver {
 
             }
 
-
+        }
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        }
+
         return driver;
     }
 
 
     public static void closeDriver() {
 
-        if (driver!=null){
-        driver.quit();
+        if (driver != null) {
+
+            driver = null;
+            driver.quit();
         }
 
-        driver = null;
     }
 }

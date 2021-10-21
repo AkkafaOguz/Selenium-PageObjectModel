@@ -2,10 +2,14 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+
+import java.util.List;
 
 public class QaConcortHotelPage {
 
@@ -57,6 +61,35 @@ public class QaConcortHotelPage {
 
     @FindBy (xpath = "//button[@data-bb-handler='ok']")
     public WebElement okButtonForSuccessSaveMessage;
+
+    @FindBy (partialLinkText = "Hotel Room")
+    public WebElement hotelRoomsButton;
+
+    @FindBy (xpath = "//span[.='Add Hotelroom ']")
+    public WebElement addHotelRoomButton;
+
+    @FindBy (xpath = "//select[@name='IDHotel']")
+    public WebElement idHotelOptions;
+
+    @FindBy (xpath = "//select[@id='IDGroupRoomType']")
+    public WebElement hotelRoomOptions;
+
+    @FindBy (xpath = "//input[@id='MaxAdultCount']")
+    public WebElement adultCountBox;
+
+    @FindBy (xpath = "//input[@name='Code']")
+    public WebElement hotelCodeBox;
+
+    @FindBy (xpath = "//button[.='Search']")
+    public WebElement searchButtonOnHotelRoom;
+
+    @FindBy (xpath = "//tbody//td[3]")
+    public List <WebElement> hotelRoomsCodes;
+
+
+
+
+
 
     public void ConcortHotelLogin() {
 
