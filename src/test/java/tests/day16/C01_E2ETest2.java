@@ -31,7 +31,7 @@ public class C01_E2ETest2 {
 //9. “HotelRoom was inserted successfully” textinin göründüğünü test edin.
 //10. OK butonuna tıklayın.
 //11. Hotel rooms linkine tıklayın.
-//12. "LIST OF HOTELROOMS" textinin göründüğünü doğrulayın..
+//12. Bir onceki asamada eklediginiz odanin, odalar listesinde gorundugunu göründüğünü doğrulayın..
 
     @Test
     public void roomCreateTest () throws InterruptedException {
