@@ -10,7 +10,6 @@ import utilities.Driver;
 
 public class KoalaResortHotel {
 
-    WebDriver driver;
 
     public KoalaResortHotel () {
 

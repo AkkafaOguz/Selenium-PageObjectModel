@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -99,5 +100,13 @@ public class QaConcortHotelPage {
         qchp.userNameBox.sendKeys(ConfigurationReader.getProperty("ChQaValidUserName"));
         qchp.passwordBox.sendKeys(ConfigurationReader.getProperty("ChQaValidPassword"));
         qchp.submitButton.click();
+    }
+
+    public String printData(int row, int column){
+
+        String tableCell = "//tbody//tr["+row+"]//td["+column+"]";
+        String cellText = Driver.getDriver().findElement(By.xpath(tableCell)).getText();
+
+        return cellText;
     }
 }

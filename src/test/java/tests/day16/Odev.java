@@ -140,17 +140,13 @@ public class Odev {
         //○ 5.column daki elementleri konsolda yazdırın.
 
         List<WebElement> fifthColumnElements = Driver.getDriver().findElements(By.xpath("//tbody//td[5]"));
+        List<WebElement> tableColumnElements = Driver.getDriver().findElements(By.xpath("//table//th[5]"));
         System.out.println("5. Column's Elemnts are: ");
+        tableColumnElements.stream().forEach(t-> System.out.println(t.getText()));
         fifthColumnElements.stream().forEach(t -> System.out.println(t.getText()));
 
+        Driver.closeDriver();
 
     }
 
 }
-
-
-
-
-
-
-
