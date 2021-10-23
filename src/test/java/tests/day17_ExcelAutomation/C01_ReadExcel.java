@@ -1,11 +1,16 @@
 package tests.day17_ExcelAutomation;
 
 import org.apache.poi.ss.usermodel.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class C01_ReadExcel {
 
@@ -17,7 +22,6 @@ public class C01_ReadExcel {
 //12. Row objesi olusturun sheet.getRow(index)
 //13. Cell objesi olusturun row.getCell(index)
 
-    public class C01_ReadExcel {
         @Test
         public void test() throws IOException {
 
