@@ -86,6 +86,5 @@ public class ReadExcelTekrar {
             System.out.println(counter++ +". Column: " + w);
         }
 
-
     }
 }

@@ -25,5 +25,5 @@ public class AmazonPage {
     @FindBy (xpath = "//select[@aria-describedby='searchDropdownDescription']")
     public WebElement dropDown;
 
-
+//Selamlar
 }
