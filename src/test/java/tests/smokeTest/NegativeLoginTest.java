@@ -19,7 +19,7 @@ public class NegativeLoginTest {
 //4) Verilen senaryolar ile giris yapilamadigini test et
 
 
-    @Test
+    @Test (groups = "birinciGrup")
     public void invalidUserName () {
         Driver.getDriver().get(ConfigurationReader.getProperty("ChQaUrl"));
         QaConcortHotelPage qchp = new QaConcortHotelPage();
@@ -29,6 +29,7 @@ public class NegativeLoginTest {
         qchp.submitButton.click();
         Assert.assertTrue(qchp.isLoginFailed.isDisplayed());
         Driver.closeDriver();
+
     }
 
     @Test
@@ -41,6 +42,7 @@ public class NegativeLoginTest {
         qchp.submitButton.click();
         Assert.assertTrue(qchp.isLoginFailed.isDisplayed());
         Driver.closeDriver();
+
     }
 
     @Test

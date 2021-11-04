@@ -22,7 +22,7 @@ public class C01_ReadExcel {
 //12. Row objesi olusturun sheet.getRow(index)
 //13. Cell objesi olusturun row.getCell(index)
 
-        @Test
+        @Test (groups = "birinciGrup")
         public void test() throws IOException {
 
             // 7. Dosya yolunu bir String degiskene atayalim

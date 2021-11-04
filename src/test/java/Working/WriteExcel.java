@@ -40,12 +40,11 @@ public class WriteExcel {
         System.out.println(excelUtil.getNumberOfRows());
         System.out.println(excelUtil.getNumberOfUsedRows());
         System.out.println(Arrays.deepToString(excelUtil.getAllDataAsArray()));
-        excelUtil.setCellData(1,4,"25000");
+        excelUtil.setCellData(1,4,"Baskent (Turkce)");
         System.out.println(excelUtil.getElementsAtTheRow(2));
-        for (Map.Entry<String,String> w: excelUtil.getDataAsMap().entrySet()) {
-            System.out.println(w);
-        }
+        excelUtil.getDataAsMap().stream().forEach(t-> System.out.println(t));
         excelUtil.setCellData(3,5,"Deneme");
+        excelUtil.getColumnNames();
 
     }
 }

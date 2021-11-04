@@ -27,6 +27,7 @@ public class C01_ConcortHotelLoginPozitiveTest extends TestBase {
         chp.passwordBox.sendKeys("Manager1!");
         chp.submitButton.click();
         Assert.assertTrue(chp.isLoginSuccessfully.isDisplayed());
+        driver.quit();
     }
 
 

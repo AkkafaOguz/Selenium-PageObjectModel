@@ -2,6 +2,7 @@ package tests.day17;
 
 import org.testng.annotations.Test;
 import pages.QaConcortHotelPage;
+import utilities.Driver;
 
 public class C01_WebTables {
 
@@ -29,6 +30,7 @@ public class C01_WebTables {
     public void printData () {
 
         System.out.println(qa.printData(3, 5));
+        Driver.closeDriver();
 
     }
 

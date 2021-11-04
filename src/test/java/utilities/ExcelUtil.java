@@ -1,5 +1,6 @@
 package utilities;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -55,6 +56,20 @@ public class ExcelUtil {
         return sheet.getPhysicalNumberOfRows();
     }
 
+    //============ Tabloda Kullanilan Sutun Isimlerini Alma ============//
+
+    public List<String> getColumnNames () {
+
+        List <String> columnNames = new ArrayList<>();
+
+        for (Cell cell: sheet.getRow(0)) {
+            columnNames.add(cell.toString());
+        }
+
+        return columnNames;
+    }
+
+
     //============ Istenen Satirdaki  Datalari Alma (Index degil!) ============//
 
     public List<String> getElementsAtTheRow(int rowNumber){
@@ -106,22 +121,23 @@ public class ExcelUtil {
 
     //============ Datalari Map Seklinde Almak (Index degil!) ============//
 
-    public Map<String, String> getDataAsMap(){
+    public List<Map<String, String>> getDataAsMap(){
 
-        Map <String,String> allData = new LinkedHashMap<>();
+        Map <String,String> allData = null;
+        List <Map <String,String>> allDataAsList = new ArrayList<>();
         String key= "";
         String value= "";
 
-        for (int i = 1; i <= getNumberOfRows(); i++) {
-            key = getElementsAtTheRow(i).get(0);
-            value = "";
-            for (int j = 1; j < getElementsAtTheRow(i).size(); j++) {
-                value += " "+getElementsAtTheRow(i).get(j);
+        for (int i = 2; i <= getNumberOfRows(); i++) {
+            allData = new LinkedHashMap<>();
+            for (int j = 2; j < getElementsAtTheRow(i).size()+1; j++) {
+                key = getColumnNames().get(j-2);
+                value = getElementsAtTheRow(i).get(j-2);
+                allData.put(key,value);
             }
-            allData.put(key,value);
+            allDataAsList.add(allData);
         }
-
-        return allData;
+        return allDataAsList;
     }
 
     //============ Tabloya Data Girmek ve Guncellemek (Index degil!) ============//

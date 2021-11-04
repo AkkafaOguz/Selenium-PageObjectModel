@@ -46,6 +46,8 @@ public class E2ETest {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),20);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOf(qchp.isSaveSuccessfully)).isDisplayed());
         qchp.okButtonForSuccessSaveMessage.click();
+        Driver.closeDriver();
+
 
 
     }

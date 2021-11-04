@@ -37,7 +37,7 @@ public class KoalaResortHotel {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("koalaUrl"));
 
-        if (connectionIssue.isDisplayed()){
+        if (!loginButton.isDisplayed()){
             Driver.getDriver().findElement(By.xpath("//button[@id='details-button']")).click();
             Driver.getDriver().findElement(By.xpath("//a[@id='proceed-link']")).click();
         }

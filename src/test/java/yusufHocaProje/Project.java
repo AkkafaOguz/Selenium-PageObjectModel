@@ -56,7 +56,7 @@ public class Project extends TestBase {
     public void compareTwoList () throws InterruptedException {
 
 
-        WebDriverWait wait = new WebDriverWait(driver,20);
+        WebDriverWait wait = new WebDriverWait(driver,5);
         WebElement cartButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id= 'cart-total']")));
         cartButton.click();
         List <WebElement> productNameBoxInTheCartList = driver.findElements(By.xpath("//td[@class= 'text-left']//a"));
@@ -67,6 +67,7 @@ public class Project extends TestBase {
         Collections.sort(productNameInTheCartList);
 
         Assert.assertEquals(nameOfProducts,productNameInTheCartList,"Test fot 'Comparing Cart List with choosed Products' is failed!");
+        driver.quit();
 
 
     }

@@ -22,6 +22,7 @@ public class C02_ConcortHotelLoginNegativeTest extends TestBase {
         chp.passwordBox.sendKeys("manager1!");
         chp.submitButton.click();
         Assert.assertTrue(chp.isLoginFailed.isDisplayed());
+        driver.quit();
 
     }
 }

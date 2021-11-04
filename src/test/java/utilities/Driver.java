@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -47,6 +48,12 @@ public class Driver {
 
                     break;
 
+                case "chrome-headless":
+                    WebDriverManager.chromedriver().setup();
+                    driver =new ChromeDriver(new ChromeOptions().setHeadless(true));
+
+                    break;
+
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -54,8 +61,9 @@ public class Driver {
             }
 
         }
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         return driver;
     }

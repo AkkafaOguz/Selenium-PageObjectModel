@@ -67,6 +67,7 @@ public class C02_WebTables {
 
         List <WebElement> forthRowElements = Driver.getDriver().findElements(By.xpath("//tbody//td[4]"));
         forthRowElements.stream().forEach(t-> System.out.println(t.getText()));
+        Driver.closeDriver();
 
     }
 }

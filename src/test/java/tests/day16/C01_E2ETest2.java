@@ -79,6 +79,7 @@ public class C01_E2ETest2 {
         qa.hotelRoomsCodes.stream().forEach(t-> selectedRoomsString.add(t.getText()));
         System.out.println(selectedRoomsString);
         Assert.assertTrue(selectedRoomsString.contains(roomCode),"Test for 'Adding Hotel Room' is failed!");
+        Driver.closeDriver();
 
     }
 }
